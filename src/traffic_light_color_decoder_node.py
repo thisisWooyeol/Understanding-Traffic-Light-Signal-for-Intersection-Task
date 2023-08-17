@@ -9,7 +9,7 @@ from std_msgs.msg import Int32, Int32MultiArray
 import time
 from time import strftime, localtime
 
-path = "/home/thisiswooyeol/PycharmProjects/FMTC-SNU/'2023 S1'/traffic_light_detection"
+path = "."
 
 class TrafficLightDecoder:
     def __init__(self):

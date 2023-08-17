@@ -10,7 +10,7 @@ from time import strftime, localtime
 
 # ! IMPORTANT : change the path to your own path
 # If you want to save the detected image, then make the directory 'output_images/yolo' in the path
-path = "/home/thisiswooyeol/PycharmProjects/FMTC-SNU/'2023 S1'/traffic_light_detection"
+path = "."
 
 class YoloDetection:
     def __init__(self, weights_path='../weights/best_0803.pt'):
