@@ -1,8 +1,10 @@
 # Understanding-Traffic-Light-Signal-for-Intersection-Task
 Part of a project for autonomous vehicle competition for college students (2023 미래형자동차 자율주행 SW 경진대회)
 
+<br>
+<br>
 
-## Introduction.
+## Introduction
 Imagine we are driving a car. When we face an intersection that we are about to pass through, we check where is the traffic light and judge if we can go or not. To automate this procedure as a self-driving car, (1)it should detect the traffic light(object detection task) and also (2)decode the traffic light image to make a vehicle control. I first referred to the repo: [Traffic-Light-Detection-And-Color-Recognition](https://github.com/nileshchopda/Traffic-Light-Detection-And-Color-Recognition). In this repository, he proposed a 2 step approach that (1)Tensorflow's fastRCNN performs an object detection task and (2)image processing using a HSV color mask.
 
 The proposed method showed good performance, but I found two areas for improvement. First, fastRCNN is itself a two-step algorithm, so using a one-step algorithm like YOLO could be more advantageous for real-time traffic light detection. Second, the existing method checks if all pixels in the bbox of the traffic light are within the red and yellow mask, which can lead to misclassification of traffic light signal, as in the output_10 image, where a yellow traffic light cover is misclassified as a stop sign.
@@ -11,6 +13,8 @@ The proposed method showed good performance, but I found two areas for improveme
 
 Therefore, in my approach, I used YOLOv8 (the latest model of YOLO, which is most widely used in practical object detection) for object detection task, and I selected the circular panel part where the light comes out from the traffic light as the region of interest for red and yellow masking and performed color recognition.
 
+<br>
+<br>
 
 ## How to get started
 ### Requirements
@@ -50,6 +54,8 @@ roslaunch usb_cam usb_cam.launch
 roslaunch traffic-light-task TL_decoder-test.launch
 ```
 
+<br>
+<br>
 
 ## Key idea for color recognition task
 
