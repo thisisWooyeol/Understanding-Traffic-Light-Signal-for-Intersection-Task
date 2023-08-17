@@ -7,7 +7,7 @@ Imagine we are driving a car. When we face an intersection that we are about to 
 
 The proposed method showed good performance, but I found two areas for improvement. First, fastRCNN is itself a two-step algorithm, so using a one-step algorithm like YOLO could be more advantageous for real-time traffic light detection. Second, the existing method checks if all pixels in the bbox of the traffic light are within the red and yellow mask, which can lead to misclassification of traffic light signal, as in the output_10 image, where a yellow traffic light cover is misclassified as a stop sign.
 
-![output_10](/assets/images/ouput_10.png)
+![output_10](/assets/readme_images/ouput_10.png)
 
 Therefore, in my approach, I used YOLOv8 (the latest model of YOLO, which is most widely used in practical object detection) for object detection task, and I selected the circular panel part where the light comes out from the traffic light as the region of interest for red and yellow masking and performed color recognition.
 
