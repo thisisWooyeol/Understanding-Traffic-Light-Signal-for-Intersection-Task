@@ -2,7 +2,7 @@
 
 from ultralytics import YOLO
 
-model = YOLO('yolov8n.pt')
+model = YOLO('../../weights/yolov8n.pt')
 model.to('cuda')
 
 # Tranining the model on TL and CW dataset
